@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conor Cussell | Developer</title>
+    <link rel="stylesheet" type="text/css" href="/basscss.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+  </head>
+  <body class="flex flex-column">
+    <header class="max-width-4 mx-auto md-flex items-center justify-between p2 col-12 flex-none">
+      <div>
+        <h1 class="h2 regular m0">
+          Conor Cussell
+        </h1>
+      </div>
+      <nav class="mt2 md-mt0">
+        <ul class="m0 list-reset flex items-center">
+          <li class="mr1">
+            <a href="" class="blue">
+              Work
+            </a>
+          </li>
+          <li class="mr1">
+            <a href="/about" class="text-decoration-none black">
+              About
+            </a>
+          </li>
+          <li class="mr1">
+            <a href="/writing" class="text-decoration-none black">
+              Writing
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@conorcussell.co.uk" class="text-decoration-none black">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="max-width-4 mx-auto px2 col-12 flex-auto">
+      <div class="my4">
+        <h1 class="h1 regular blue">The Tab</h1>
+        <p>
+          Full-stack Engineer
+          <br/>
+          <span class="grey">
+            Oct 2016 - Present
+          </span>
+        </p>
+      </div>
+      <div class="my4 max-width-2">
+        <p class="line-height-4">
+          The Tab is an online news site which gets over 8 million unique visits per month, to read stories written
+          by its network of authors from over 100 universities across UK and the US.
+        </p>
+        <p class="line-height-4">
+          I work on its platform for writers and editors, Rosebud.
+        </p>
+        <h2 class="mt3 mb2 regular h2">Writers</h2>
+        <p class="line-height-4">
+          For writers this includes a rich text editor and a dashboard for viewing performance of their published
+          stories or the status of their drafts.
+        </p>
+        <div class="my2">
+          <video width="100%" autoplay loop>
+            <source
+              src="/img/editor.mp4"
+              type="video/mp4">
+            Your browser doesn't support HTML5 video tag.
+          </video>
+        </div>
+        <h2 class="mt3 mb2 regular h2">Editors</h2>
+        <p class="line-height-4">
+          For editors this includes tools for managing new writer applications, viewing and giving feedback on stories
+          and collaborating on the stories which are produced.
+        </p>
+        <h2 class="mt3 mb2 regular h2">Technology</h2>
+        <p class="line-height-4">
+          The technology used was a server side of Node JS and Express which acts as a proxy api and also for
+          server-rendering React views, image editing and other functionality.
+        </p>
+        <p class="line-height-4">
+          The client side is powered by React, Redux, React Router and various other libraries and tools.
+        </p>
+        <h2 class="mt3 mb2 regular h2">Performance</h2>
+        <p class="line-height-4">
+          Upon joining the project no attention had previously been paid to performance optimisations.
+          I focused on reducing the bundle size of the application. First by replacing large monolithic libraries
+          like Moment JS with smaller modular replacements which had the effect of reducing the bundle by 50%.
+        </p>
+        <p class="line-height-4">
+          I then used Webpack's code-splitting functionality to split our bundle on a per route basis, which further
+          reduced the amount of JavaScript being loaded and parsed per page and gave noticable improvements in
+          time to interactive.
+        </p>
+        <p class="line-height-4">
+          In addition to this focus on asset reduction, I also introduced a caching layer of Redis in front of our main
+          requests, which resulted in a 10x decrease in API response times and lead to a much snappier feeling experience.
+        </p>
+      </div>
+    </main>
+    <footer class="max-width-4 mx-auto p2 md-flex justify-between col-12 flex-none">
+      <div class="order-last">
+        <ul class="m0 list-reset flex">
+          <li class="mr1 grey">
+            <a href="https://github.com/conorcussell" class="grey text-decoration-none">
+              Github
+            </a>
+          </li>
+          <li class="mr1 grey">
+            <a href="https://twitter.com/conorcussell" class="grey text-decoration-none">
+              Twitter
+            </a>
+          </li>
+          <li class="grey">
+            <a href="https://instagram.com/conorcussell" class="grey text-decoration-none">
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mt2 md-mt0 grey">
+        © Conor Cussell - 2017
+      </div>
+    </footer>
+  </body>
+</html>
