@@ -5,8 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Conor Cussell | Developer</title>
-    <link rel="stylesheet" type="text/css" href="/basscss.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <style>
+      .h1{font-size:2rem}.h2{font-size:1.5rem}.h3{font-size:1.25rem}.text-decoration-none{text-decoration:none}.regular{font-weight:400}.list-reset{list-style:none;padding-left:0}.max-width-4{max-width:64rem}.m0{margin:0}.mr1{margin-right:.5rem}.mt2{margin-top:1rem}.my4{margin-top:4rem;margin-bottom:4rem}.mx-auto{margin-right:auto}.mx-auto{margin-left:auto}.p2{padding:1rem}.px2{padding-left:1rem;padding-right:1rem}.col-12{width:100%}.flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}@media(min-width:52em){.md-flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}.flex-column{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.items-center{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center}.justify-between{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.flex-auto{-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;min-width:0;min-height:0}.flex-none{-webkit-box-flex:0;-webkit-flex:none;-ms-flex:none;flex:none}.order-last{-webkit-box-ordinal-group:100000;-webkit-order:99999;-ms-flex-order:99999;order:99999}*{box-sizing:border-box}html{font-size:18px;height:100%}body{min-height:100vh;background:#f7f7f7;color:#111;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}.grey{color:#8f8f8f}.black{color:#111}.blue{color:#0074d9}@media(min-width:52em){.md-mt0{margin-top:0}}
+    </style>
   </head>
   <body class="flex flex-column">
     <header class="max-width-4 mx-auto md-flex items-center justify-between p2 col-12 flex-none">
@@ -25,11 +26,6 @@
           <li class="mr1">
             <a href="/about" class="text-decoration-none black">
               About
-            </a>
-          </li>
-          <li class="mr1">
-            <a href="/writing" class="text-decoration-none black">
-              Writing
             </a>
           </li>
           <li>
@@ -58,14 +54,14 @@
         <h1 class="h1 regular grey">Previous</h1>
       </div>
       <div class="my4">
-        <h2 class="h3 regular">Hector</h2>
+        <h2 class="h3 regular">Moneybags</h2>
         <p class="grey">
-          Freelance
+          Personal Project
         </p>
         <p>
-          Design + Development - Static Site
+          Design + Development - Node, Preact
         </p>
-        <a href="http://directorhector.com/" target="_blank" class="blue text-decoration-none">More ⟶</a>
+        <a href="/moneybags" class="blue text-decoration-none">More ⟶</a>
       </div>
       <div class="my4">
         <h2 class="h3 regular">Sofar Sounds</h2>
@@ -73,9 +69,19 @@
           Full-time
         </p>
         <p>
-          Full-stack developer - Ruby on Rails, JavaScript, SASS
+          Front-end developer - Ruby on Rails, JavaScript, SASS
         </p>
         <a href="/sofar-sounds" class="blue text-decoration-none">More ⟶</a>
+      </div>
+      <div class="my4">
+        <h2 class="h3 regular">Hector</h2>
+        <p class="grey">
+          Freelance
+        </p>
+        <p>
+          Design + Development - Static Site
+        </p>
+        <a href="http://directorhector.com/" rel="noopener" target="_blank" class="blue text-decoration-none">More ⟶</a>
       </div>
       <div class="my4">
         <h2 class="h3 regular">Gigs Near Me</h2>
@@ -85,7 +91,7 @@
         <p>
           Design + Development - JavaScript, PostCSS
         </p>
-        <a href="http://gigsnearme.com" target="_blank" class="blue text-decoration-none">More ⟶</a>
+        <a href="https://gigsnearme.com" rel="noopener" target="_blank" class="blue text-decoration-none">More ⟶</a>
       </div>
       <div class="my4">
         <h2 class="h3 regular">Terence Corless</h2>
@@ -95,7 +101,7 @@
         <p>
           Design + Development - Static Site
         </p>
-        <a href="http://terencecorless.com" target="_blank" class="blue text-decoration-none">More ⟶</a>
+        <a href="http://terencecorless.com" rel="noopener" target="_blank" class="blue text-decoration-none">More ⟶</a>
       </div>
       <div class="my4">
         <h2 class="h3 regular">Island Records</h2>
@@ -105,7 +111,7 @@
         <p>
           Design + Development - Various
         </p>
-        <a href="" class="blue text-decoration-none">More ⟶</a>
+        <a href="/island-records" class="blue text-decoration-none">More ⟶</a>
       </div>
     </main>
     <footer class="max-width-4 mx-auto p2 md-flex justify-between col-12 flex-none">
@@ -132,5 +138,17 @@
         © Conor Cussell - 2017
       </div>
     </footer>
+    <script>
+      if ('serviceWorker' in navigator) {
+        // Attempt to register it
+        navigator.serviceWorker.register('/sw.js').then(function() {
+          // Success Message
+          console.log('ServiceWorker succesfully registered');
+        }).catch(function(err) {
+          // Error Message
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      }
+    </script>
   </body>
 </html>
