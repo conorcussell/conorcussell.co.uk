@@ -17,7 +17,8 @@
     "uncss": "^0.14.1"
   },
   "scripts": {
-    "build": "node index.js"
+    "build": "node index.js",
+    "deploy": "npm run build && now"
   },
   "repository": {
     "type": "git",
