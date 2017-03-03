@@ -4,31 +4,30 @@ var uncss = require('uncss');
 var path = require('path');
 var cssnano = require('cssnano');
 var Minimize = require('minimize');
-var buildFolder = './build';
+var mkdirp = require('mkdirp');
+
+function writeFile(file) {
+  var dir = path.dirname(file);
+  mkdirp.sync(dir.replace(/src/, 'build'));
+}
 
 // find all index.html files
-glob('src/**/index.html', (err, files) => {
-  fs.readFile('src/css/basscss.min.css', 'utf8', (err, data) => {
-    if (err) {
-      console.log(err);
-    }
-    css = data;
-    fs.readFile('src/css/style.css', 'utf8', (err, data) => {
-      if (err) {
-        console.log(err);
-      }
-      css += data;
-      files.forEach(file => {
-        console.log(file);
+glob('src/**/*', (err, files) => {
 
-        // run uncss, minify, strip out links to stylesheets, inline styles, minify html and write to build folder.
-        prepareStyles(file, css);
-      });
-    });
-  });
+  // make the folder structure in build
+  files.forEach(f => writeFile(f));
+
+  var css;
+
+  css = fs.readFileSync('src/css/basscss.min.css', 'utf8');
+  css += fs.readFileSync('src/css/basscss.min.css', 'utf8');
+
+  var html = files.filter(f => f.match('.html'));
+
+  html.forEach(f => build(f, css));
 });
 
-function prepareStyles(file, css) {
+function build(file, css) {
   var options = {
     raw: css,
     timeout: 1000,

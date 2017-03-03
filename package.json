@@ -11,7 +11,8 @@
     "cssnano": "^3.10.0",
     "glob": "^7.1.1",
     "html-minifier": "^3.4.0",
-    "minimize": "^2.0.0"
+    "minimize": "^2.0.0",
+    "mkdirp": "^0.5.1"
   },
   "scripts": {
     "build": "node index.js"
