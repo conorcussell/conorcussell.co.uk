@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "node index.js",
-    "deploy": "npm run build && now"
+    "deploy": "npm run build && cd build && now"
   },
   "repository": {
     "type": "git",
