@@ -71,32 +71,38 @@ function build(file, css) {
 
       var $ = cheerio.load(html);
 
-      // find all images and add base64 version for lazy-loading
-      $('img.js-lazy-load').each(function(i, el) {
-        var src = $(el).attr('src');
+      var images = $('img.js-lazy-load');
 
-        gm('./src' + src)
-          .resize(15, 15)
-          .toBuffer('GIF', function (error, buffer) {
-            if (error) {
-              return error;
-            }
+      if (images.length) {
+        $(images).each(function(i, el) {
+          var src = $(el).attr('src');
 
-            var base64 = 'data:image/gif;base64,' + buffer.toString('base64');
+          gm('./src' + src)
+            .resize(15, 15)
+            .toBuffer('GIF', function (error, buffer) {
+              if (error) {
+                return error;
+              }
 
-            $(el).attr('data-src', src);
-            $(el).attr('src', base64);
+              var base64 = 'data:image/gif;base64,' + buffer.toString('base64');
 
-            html = $.html();
-            // minify the html;
-            html = new Minimize().parse(html);
-            var filename = file.replace(/src/, 'build');
+              $(el).attr('data-src', src);
+              $(el).attr('src', base64);
 
-            fs.writeFileSync(filename, html, 'utf8');
+              html = $.html();
+              // minify the html;
+              html = new Minimize().parse(html);
+              var filename = file.replace(/src/, 'build');
+
+              fs.writeFileSync(filename, html, 'utf8');
+          });
         });
-      });
+      } else {
+        html = new Minimize().parse(html);
+        var filename = file.replace(/src/, 'build');
 
-
+        fs.writeFileSync(filename, html, 'utf8');
+      }
     });
   });
 }
