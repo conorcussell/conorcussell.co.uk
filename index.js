@@ -5,8 +5,9 @@ var path = require('path');
 var cssnano = require('cssnano');
 var Minimize = require('minimize');
 var mkdirp = require('mkdirp');
+var UglifyJS = require('uglify-js');
 
-function writeFile(file) {
+function createFolder(file) {
   var dir = path.dirname(file);
   mkdirp.sync(dir.replace(/src/, 'build'));
 }
@@ -15,15 +16,28 @@ function writeFile(file) {
 glob('src/**/*', (err, files) => {
 
   // make the folder structure in build
-  files.forEach(f => writeFile(f));
+  files.forEach(f => createFolder(f));
 
+  // filter out images and move them to build folder
+  files.filter(f => f.match(/(img)/) && !fs.statSync(f).isDirectory()).forEach(f => {
+    fs.createReadStream(f).pipe(fs.createWriteStream(f.replace(/src/, 'build')));
+  });
+
+  // get javascript, minify and move to build folder
+  files.filter(f => f.match(/(.js)/) && !fs.statSync(f).isDirectory()).forEach(f => {
+    var result = UglifyJS.minify(f);
+    fs.writeFileSync(f.replace(/src/, 'build'), result.code);
+  });
+
+  // get the css
   var css;
 
-  css = fs.readFileSync('src/css/basscss.min.css', 'utf8');
-  css += fs.readFileSync('src/css/basscss.min.css', 'utf8');
+  css = fs.readFileSync('./src/css/basscss.min.css', 'utf8');
+  css += fs.readFileSync('./src/css/style.css', 'utf8');
 
   var html = files.filter(f => f.match('.html'));
 
+  // optimise each html page
   html.forEach(f => build(f, css));
 });
 
@@ -53,24 +67,9 @@ function build(file, css) {
 
       // minify the html;
       html = new Minimize().parse(html);
-
-      if (!fs.existsSync(buildFolder)) {
-        fs.mkdirSync(buildFolder);
-      }
-
       var filename = file.replace(/src/, 'build');
 
-      // check if it needs a subdirectory, and make it if so.
-      var subdirectory = filename.match(/build\/(.*)\//);
-      console.log(subdirectory);
-      if (subdirectory) {
-        if (!fs.existsSync(subdirectory)[0]) {
-          fs.mkdirSync(subdirectory[0]);
-          fs.writeFileSync(filename, html, 'utf8');
-        }
-      } else {
-        fs.writeFileSync(filename, html, 'utf8');
-      }
+      fs.writeFileSync(filename, html, 'utf8');
     });
   });
 }

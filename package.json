@@ -12,7 +12,8 @@
     "glob": "^7.1.1",
     "html-minifier": "^3.4.0",
     "minimize": "^2.0.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "uglify-js": "^2.8.5"
   },
   "scripts": {
     "build": "node index.js"
