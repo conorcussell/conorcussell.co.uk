@@ -1,0 +1,29 @@
+{
+  "name": "conorcussell.co.uk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "basscss": "^8.0.3"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "cssnano": "^3.10.0",
+    "glob": "^7.1.1",
+    "html-minifier": "^3.4.0",
+    "minimize": "^2.0.0"
+  },
+  "scripts": {
+    "build": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conorcussell/conorcussell.co.uk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conorcussell/conorcussell.co.uk/issues"
+  },
+  "homepage": "https://github.com/conorcussell/conorcussell.co.uk#readme"
+}
