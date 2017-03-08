@@ -16,20 +16,25 @@ function createFolder(file) {
 
 // find all index.html files
 glob('src/**/*', (err, files) => {
-
   // make the folder structure in build
   files.forEach(f => createFolder(f));
 
   // filter out images and move them to build folder
-  files.filter(f => f.match(/(img)/) && !fs.statSync(f).isDirectory()).forEach(f => {
-    fs.createReadStream(f).pipe(fs.createWriteStream(f.replace(/src/, 'build')));
-  });
+  files
+    .filter(f => f.match(/(img)/) && !fs.statSync(f).isDirectory())
+    .forEach(f => {
+      fs
+        .createReadStream(f)
+        .pipe(fs.createWriteStream(f.replace(/src/, 'build')));
+    });
 
   // get javascript, minify and move to build folder
-  files.filter(f => f.match(/(.js)/) && !fs.statSync(f).isDirectory()).forEach(f => {
-    var result = UglifyJS.minify(f);
-    fs.writeFileSync(f.replace(/src/, 'build'), result.code);
-  });
+  files
+    .filter(f => f.match(/(.js)/) && !fs.statSync(f).isDirectory())
+    .forEach(f => {
+      var result = UglifyJS.minify(f);
+      fs.writeFileSync(f.replace(/src/, 'build'), result.code);
+    });
 
   // get the css
   var css;
@@ -51,22 +56,24 @@ function build(file, css) {
     ignoreSheets: [/.css/]
   };
 
-  uncss([file], options, function (error, output) {
+  uncss([file], options, function(error, output) {
     if (error) {
       console.log(error);
     }
     // minify the output and write it to build folder?
     // console.log(output);
-    cssnano.process(output).then(function (result) {
-      var style =
-      `<style>
+    cssnano.process(output).then(function(result) {
+      var style = `<style>
         ${result.css}
       </style>
       </head>`;
       var html = fs.readFileSync(file, 'utf-8');
 
       // get the html and inline the styles
-      html = html.replace(/<link rel="stylesheet" type="text\/css" href="\/css\/(style|basscss.min).css"\/>/g, '');
+      html = html.replace(
+        /<link rel="stylesheet" type="text\/css" href="\/css\/(style|basscss.min).css"\/>/g,
+        ''
+      );
       html = html.replace(/<\/head>/, style);
 
       var $ = cheerio.load(html);
@@ -79,7 +86,7 @@ function build(file, css) {
 
           gm('./src' + src)
             .resize(15, 15)
-            .toBuffer('GIF', function (error, buffer) {
+            .toBuffer('GIF', function(error, buffer) {
               if (error) {
                 return error;
               }
@@ -95,7 +102,7 @@ function build(file, css) {
               var filename = file.replace(/src/, 'build');
 
               fs.writeFileSync(filename, html, 'utf8');
-          });
+            });
         });
       } else {
         html = new Minimize().parse(html);
