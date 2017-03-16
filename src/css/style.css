@@ -28,6 +28,14 @@ body {
   color: #0074D9;
 }
 
+.bg-blue {
+  background-color: #0074D9;
+}
+
+.white {
+  color: #fff;
+}
+
 .grey-dark {
   color: #405055;
 }

@@ -30,7 +30,10 @@ function getImages(scrollPos) {
   var images = [].slice.call(document.querySelectorAll('.js-lazy-load'));
   images.map(function(image) {
     if((image.getBoundingClientRect().top - window.innerHeight) < 50) {
-      image.src = image.getAttribute('data-src');
+      var fullSize = image.getAttribute('data-src');
+      if (fullSize) {
+        image.src = fullSize;
+      }
     }
   });
 }

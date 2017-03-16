@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conor Cussell | Developer</title>
+
+    <meta name="theme-color" content="#0074d9">
+    <link rel="stylesheet" type="text/css" href="/css/basscss.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+  </head>
+  <body class="flex flex-column">
+    <header class="max-width-4 mx-auto md-flex items-center justify-between p2 col-12 flex-none">
+      <div>
+        <h1 class="h2 regular m0">
+          Conor Cussell
+        </h1>
+      </div>
+      <nav class="mt2 md-mt0">
+        <ul class="m0 list-reset flex items-center">
+          <li class="mr1">
+            <a href="" class="blue">
+              Work
+            </a>
+          </li>
+          <li class="mr1">
+            <a href="/about" class="text-decoration-none black">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="mailto:contact@conorcussell.co.uk" class="text-decoration-none black">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="max-width-4 mx-auto px2 col-12 flex-auto">
+      <div class="my4">
+        <div class="max-width-2">
+          <p class="line-height-4">
+            Whilst my focus and expertise is mainly related to larger web applications, I have also produced smaller interactive
+            websites for a variety of brands. As ever I aim to produce fast, accessible experiences, which informs the technology choices made.
+          </p>
+        </div>
+        <div class="max-width-2">
+          <h1 class="h1 regular">Spotify: Downlow</h1>
+          <p class="grey">Technologies used</p>
+          <div class="flex flex-wrap">
+            <div class="p1 bg-blue white rounded mr1 mb1">HTML</div>
+            <div class="p1 bg-blue white rounded mr1 mb1">SASS</div>
+            <div class="p1 bg-blue white rounded mr1 mb1">Vanilla JavaScript</div>
+          </div>
+          <p class="line-height-4">
+            Picked as a Campaign of the Week by Melanie Deziel, a leading native advertising expert.
+            Deziel said: “Great way to leverage brand data to tell a story the publisher couldn't otherwise.”
+          </p>
+          <p class="line-height-4">
+            Using data and insights provided by Spotify, I produced an interactive leaderboard of universities ranked
+            by their music taste which was viewed 169,000 times and had an average 'on-page' time of 1.30.
+          </p>
+        </div>  
+      </div>
+      <div class="my4">
+        <div class="max-width-2">
+          <h1 class="h1 regular">Heineken: Beer Gardens</h1>
+          <p class="grey">Technologies used</p>
+          <div class="flex flex-wrap">
+          <div class="p1 bg-blue white rounded mr1 mb1">Preact</div>
+          <div class="p1 bg-blue white rounded mr1 mb1">Redux</div>
+          <div class="p1 bg-blue white rounded mr1 mb1">Webpack</div>
+          <div class="p1 bg-blue white rounded mr1 mb1">Google Maps API</div>
+          <div class="p1 bg-blue white rounded mr1 mb1">Dark Sky Weather API</div>
+          </div>
+          <p class="line-height-4">
+            In partnership with Heineken, I created a interactive web app to drive users to pub beer gardens around the
+            UK based on hyperlocal weather forecasts and browser location. 1200 free pints were drunk by over 250,000 students
+            who used the app during the campaign.
+          </p>
+        </div>
+      </div>
+      <div class="my4">
+        <div class="max-width-2">
+          <h1 class="h1 regular">Barclays: Future 100</h1>
+          <p class="grey">Technologies used</p>
+          <div class="flex flex-wrap">
+            <div class="p1 bg-blue white rounded mr1 mb1">Preact</div>
+            <div class="p1 bg-blue white rounded mr1 mb1">Webpack</div>
+          </div>
+          <p class="line-height-4">
+            I worked on an interactive microsite for Barclays to display the 'future 100' women. I used Preact and Webpack
+            to produce a filterable and searchable list which was viewed over 150,000 times and resulted in a 13.4% click through.
+          </p>
+        </div>
+        <div class="my2 max-width-3">
+          <img src="/img/barclays.png" class="fit" width="100%" style="box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1)">
+        </div>
+      </div>
+    </main>
+    <footer class="max-width-4 mx-auto p2 md-flex justify-between col-12 flex-none">
+      <div class="order-last">
+        <ul class="m0 list-reset flex">
+          <li class="mr1 grey">
+            <a href="https://github.com/conorcussell" class="grey text-decoration-none">
+              Github
+            </a>
+          </li>
+          <li class="mr1 grey">
+            <a href="https://twitter.com/conorcussell" class="grey text-decoration-none">
+              Twitter
+            </a>
+          </li>
+          <li class="grey">
+            <a href="https://instagram.com/conorcussell" class="grey text-decoration-none">
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mt2 md-mt0 grey">
+        © Conor Cussell - 2017
+      </div>
+    </footer>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() {
+          console.log('ServiceWorker succesfully registered');
+        }).catch(function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      }
+    </script>
+  </body>
+</html>
