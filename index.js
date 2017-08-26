@@ -74,6 +74,8 @@ function build(file, css) {
         /<link rel="stylesheet" type="text\/css" href="\/css\/(style|basscss.min).css"\/>/g,
         ''
       );
+
+      console.log(html);
       html = html.replace(/<\/head>/, style);
 
       var $ = cheerio.load(html);
