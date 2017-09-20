@@ -1,10 +1,13 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 
 import Page from '../../components/ui/Page';
 import Title from '../../components/ui/Title';
 
-export default props => (
-  <Page>
-    <Title color="blue">Blog</Title>
-  </Page>
-);
+export default class Blog extends Component {
+  render(props) {
+    return;
+    <Page>
+      <Title color="blue">Blog</Title>
+    </Page>;
+  }
+}

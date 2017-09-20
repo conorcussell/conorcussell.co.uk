@@ -1,5 +1,5 @@
 {
-  "name": "new",
+  "name": "conorcussell.co.uk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
     "serve": "preact build && preact serve",
+    "now-start": "npm run serve",
     "dev": "preact watch"
   },
   "keywords": [],
