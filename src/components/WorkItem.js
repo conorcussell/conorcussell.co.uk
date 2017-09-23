@@ -6,7 +6,7 @@ const WorkItem = ({ external, company, position, type, url }) => (
     <h2 class="normal f3">{company}</h2>
     <p class="gray">{type}</p>
     <p>{position}</p>
-    <Link href={url} external className="blue link">
+    <Link href={url} external={external || false} className="blue link">
       More ⟶
     </Link>
   </div>

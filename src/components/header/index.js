@@ -4,7 +4,7 @@ import Link from '../ui/Link';
 export default class Header extends Component {
   render() {
     return (
-      <header class="flex-ns justify-between items-center mw8 center ph3 pv3">
+      <header class="w-100 flex-none flex-ns justify-between items-center mw8 center ph3 ph4-ns pv3">
         <Link href="/" className="no-underline">
           <h1 class="normal black f3 mb3 ma0-ns">Conor Cussell</h1>
         </Link>
