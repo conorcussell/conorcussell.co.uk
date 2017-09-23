@@ -30,8 +30,11 @@ export default class BlogPost extends Component {
     // than using the normal github api for raw content e.g.
     // https://api.github.com/repos/conorcussell/blog/contents/${post}.md
 
+    // TODO: make this master when ready
+    // https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/master/blog/${post}.md
+
     fetch(
-      `https://raw.githubusercontent.com/conorcussell/blog/master/${post}.md`
+      `https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/feature/blog/blog/${post}.md`
     )
       .then(res => res.text())
       .then(text => {

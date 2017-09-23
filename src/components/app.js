@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
 import Header from './header';
+import Footer from './footer';
 import Home from '../routes/home';
 import Work from '../routes/work';
 import About from '../routes/about';
@@ -21,7 +22,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div id="app" class="sans-serif f4 bg-near-white min-vh-100">
+      <div
+        id="app"
+        class="sans-serif f4 bg-near-white min-vh-100 flex flex-column"
+      >
         <Header />
         <Router onChange={this.handleRoute}>
           <Home path="/" />
@@ -31,6 +35,7 @@ export default class App extends Component {
           <Blog path="/blog" />
           <BlogPost path="/blog/:post" />
         </Router>
+        <Footer />
       </div>
     );
   }

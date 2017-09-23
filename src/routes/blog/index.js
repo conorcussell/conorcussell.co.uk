@@ -29,15 +29,28 @@ export default class Blog extends Component {
     this.setState({
       loading: true
     });
+
+    // TODO: make this master when ready
+    // https://api.github.com/repos/conorcussell/conorcussell.co.uk/contents/blog
+
     fetch(
-      `https://api.github.com/repos/conorcussell/conorcussell.co.uk/blog/contents/`
+      `https://api.github.com/repos/conorcussell/conorcussell.co.uk/contents/blog?ref=feature%2Fblog`
     )
       .then(res => res.json())
       .then(posts => {
-        this.setState({
-          posts,
-          loading: false
-        });
+        console.log(posts);
+        if (posts.length) {
+          this.setState({
+            posts,
+            loading: false
+          });
+        } else {
+          this.setState({
+            posts: [],
+            loading: false
+          });
+        }
+
         console.log(posts);
       })
       .catch(err => console.log(err));
