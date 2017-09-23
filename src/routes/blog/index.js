@@ -18,12 +18,6 @@ export default class Blog extends Component {
     this.getPosts();
   }
 
-  componentWillReceiveProps(props) {
-    if (props.post !== this.props.post) {
-      this.getPosts();
-    }
-  }
-
   getPosts = () => {
     let { post } = this.props;
     this.setState({
@@ -38,7 +32,6 @@ export default class Blog extends Component {
     )
       .then(res => res.json())
       .then(posts => {
-        console.log(posts);
         if (posts.length) {
           this.setState({
             posts,
@@ -50,38 +43,42 @@ export default class Blog extends Component {
             loading: false
           });
         }
-
-        console.log(posts);
       })
       .catch(err => console.log(err));
   };
 
-  renderContent = () => {
-    return (
-      <div>
-        <ul class="ma0 pa0 list">
-          {this.state.posts.map(({ name }) => (
-            <li class="mv5">
-              <Link
-                href={createHref(name)}
-                class="link black"
-                activeClassName=""
-              >
-                <p class="ma0 f3">{createLinkText(name)}</p>
-                <p class="blue">Read ⟶</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+  renderContent = ({ posts, loading }) => {
+    if (loading) {
+      return <div class="mv5">Loading...</div>;
+    } else if (posts.length) {
+      return (
+        <div>
+          <ul class="ma0 pa0 list">
+            {posts.map(({ name }) => (
+              <li class="mv5">
+                <Link
+                  href={createHref(name)}
+                  class="link black"
+                  activeClassName=""
+                >
+                  <p class="ma0 f3">{createLinkText(name)}</p>
+                  <p class="blue">Read ⟶</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    } else {
+      return <div class="mv5">None found</div>;
+    }
   };
 
   render(props, state) {
     return (
       <Page>
         <Title color="blue">Blog</Title>
-        {this.renderContent()}
+        {this.renderContent(state)}
       </Page>
     );
   }
