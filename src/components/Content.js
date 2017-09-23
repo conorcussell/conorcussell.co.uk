@@ -17,8 +17,6 @@ export default class Content extends Component {
       loading: true
     });
 
-    console.log('fetching', url);
-
     fetch(url)
       .then(res => res.text())
       .then(text => {
