@@ -5,13 +5,19 @@ import { Link } from 'preact-router/match';
  *
  */
 
-export default ({ href, children, external, className, activeClassName }) =>
-  href.charAt(0) === '/' ? (
+export default ({
+  href,
+  children,
+  external = false,
+  className,
+  activeClassName
+}) =>
+  external ? (
+    <a href={href} target="_blank" class={className}>
+      {children}
+    </a>
+  ) : (
     <Link href={href} class={className} activeClassName={activeClassName}>
       {children}
     </Link>
-  ) : (
-    <a href={href} target={external ? '_blank' : ''} class={className}>
-      {children}
-    </a>
   );
