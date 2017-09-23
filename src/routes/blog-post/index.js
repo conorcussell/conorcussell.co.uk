@@ -25,6 +25,11 @@ export default class BlogPost extends Component {
     this.setState({
       loading: true
     });
+
+    // NOTE - I'm fetching the raw .md file here as in my tests it was 3x faster
+    // than using the normal github api for raw content e.g.
+    // https://api.github.com/repos/conorcussell/blog/contents/${post}.md
+
     fetch(
       `https://raw.githubusercontent.com/conorcussell/blog/master/${post}.md`
     )
@@ -49,7 +54,13 @@ export default class BlogPost extends Component {
   getContent = text => text.split('---').pop();
 
   renderContent = content =>
-    content ? <Markup markup={content} /> : <div>Loading...</div>;
+    content ? (
+      <div class="mw6">
+        <Markup markup={content} />
+      </div>
+    ) : (
+      <div>Loading...</div>
+    );
 
   render(props, state) {
     let { content, title } = state;

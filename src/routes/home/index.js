@@ -21,7 +21,7 @@ export default class Home extends Component {
           position="Full-stack developer - Wordpress, JavaScript"
           type="Contract"
           external
-          url="http://staging.neverletgo.com"
+          url="https://neverletgo.com"
         />
         <WorkItem
           company="Sofar Sounds"
@@ -60,8 +60,7 @@ export default class Home extends Component {
           company="Island Records"
           position="Digital Designer + Developer"
           type="Full-time"
-          external
-          url="http://directorhector.com/"
+          url="/work/island-records"
         />
       </Page>
     );
