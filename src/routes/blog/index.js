@@ -29,7 +29,9 @@ export default class Blog extends Component {
     this.setState({
       loading: true
     });
-    fetch(`https://api.github.com/repos/conorcussell/blog/contents/`)
+    fetch(
+      `https://api.github.com/repos/conorcussell/conorcussell.co.uk/blog/contents/`
+    )
       .then(res => res.json())
       .then(posts => {
         this.setState({
