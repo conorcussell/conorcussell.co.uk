@@ -13,7 +13,7 @@ export default ({
   activeClassName
 }) =>
   external ? (
-    <a href={href} target="_blank" class={className}>
+    <a href={href} rel="noopener" target="_blank" class={className}>
       {children}
     </a>
   ) : (
