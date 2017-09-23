@@ -28,7 +28,7 @@ export default class Blog extends Component {
     // https://api.github.com/repos/conorcussell/conorcussell.co.uk/contents/blog
 
     fetch(
-      `https://api.github.com/repos/conorcussell/conorcussell.co.uk/contents/blog?ref=feature%2Fblog`
+      `https://api.github.com/repos/conorcussell/conorcussell.co.uk/contents/blog?ref=2.0`
     )
       .then(res => res.json())
       .then(posts => {

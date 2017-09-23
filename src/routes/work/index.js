@@ -12,10 +12,10 @@ export default ({ work }) => {
   // TODO: make this master when ready
   // https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/master/work/${work}.md
 
-  const url = `https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/feature/blog/work/${work}.md`;
+  const url = `https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/2.0/work/${work}.md`;
   return (
     <Page>
-      <div class="mw6">
+      <div class="mw7">
         <Content url={url} />
       </div>
     </Page>
