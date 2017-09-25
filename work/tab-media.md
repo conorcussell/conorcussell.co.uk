@@ -1,9 +1,9 @@
 ---
-title: Work: The Tab
+title: Tab Media | Work
 description: And some content
 ---
 
-<h1 class="normal f2 ma0 blue">The Tab</h1>
+<h1 class="normal f2 ma0 blue">Tab Media</h1>
 
 <p>Full-stack Engineer</p>
 <p class="gray">Oct 2016 - Present</p>

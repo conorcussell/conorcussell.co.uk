@@ -12,7 +12,7 @@ export default ({ work }) => {
   // TODO: make this master when ready
   // https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/master/work/${work}.md
 
-  const url = `https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/2.0/work/${work}.md`;
+  const url = `https://raw.githubusercontent.com/conorcussell/conorcussell.co.uk/2.0/work/${work}.md?v=1`;
   return (
     <Page>
       <div class="mw7">

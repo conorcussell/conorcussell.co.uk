@@ -10,10 +10,10 @@ export default class Home extends Component {
       <Page>
         <Title color="blue">Work</Title>
         <WorkItem
-          company="The Tab"
+          company="Tab Media"
           position="Full-stack developer - Node, React"
           type="Full-time &mdash; Oct ’16 to present"
-          url="/work/the-tab"
+          url="/work/tab-media"
         />
         <Title>Previous</Title>
         <WorkItem
