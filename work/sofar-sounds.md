@@ -32,7 +32,7 @@ Events search
 One of the first projects I worked on after joining was to build out the events index into a useful page for finding Sofar shows around the world. I paired with one of my teammates for the development of the search model with Ruby and used AJAX and browser geolocation to produce a searchable and filterable list of events worldwide. This saw a huge reduction in bounce rate for the page.
 </p>
 
-<img src="/assets/images/work/sofar/events.jpg" style="box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1)" class="fit w-100">
+<img src="/assets/images/work/sofar/events.jpg" style="box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1)" class="fit w-100" />
 
 <h2 class="f3 normal">
 Performance

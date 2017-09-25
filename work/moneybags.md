@@ -11,5 +11,5 @@ description: And some content
 <p class="lh-copy measure">Moneybags is a simple savings tracker build with Node, Express and a small 'React-like' library called Preact.</p>
 <a href="https://moneybags.co" target="_blank" class="link blue">View site ⟶</a>
 
-<img src="/assets/images/work/moneybags/home.jpg" style="box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1)" class="fit w-100"/>
+<img src="/assets/images/work/moneybags/home.jpg" style="box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1)" class="fit w-100" />
 <img src="/assets/images/work/moneybags/goal.jpg" style="box-shadow: 0 3px 5px 1px rgba(0,0,0,0.1)" class="fit w-100" />
